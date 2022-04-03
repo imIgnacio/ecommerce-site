@@ -18,12 +18,12 @@ function Products() {
         .then((data) => dispatch({ type: GET_PRODUCTS, payload: data }))
     }, []);
 
-    return <div className='products'>
+    return <>
         { isLoading? <Spinner/> : 
           products.map((element) => 
           <Card key={element.id} name={element.product_name} price={element.price} image={element.image} />) 
         }
-    </div>
+    </>
 }
 
 export default Products

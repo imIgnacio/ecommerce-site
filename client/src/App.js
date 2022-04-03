@@ -6,8 +6,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello World</h1>
-      <Products/>
+      <h1>My Little Shop</h1>
+      <div className='products'>
+        <Products/>
+      </div>
     </div>
   );
 }
