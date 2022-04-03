@@ -1,10 +1,10 @@
 import React from 'react'
 import { getProducts } from '../../api/getProducts';
-import { Item } from 'semantic-ui-react'
 import { store } from '../../index';
 import { useDispatch, useSelector } from 'react-redux';
 import { GET_PRODUCTS, LOADING } from '../../types/types';
 import Spinner from '../spinner/Spinner';
+import Card from '../card/Card';
 
 function Products() {
 
@@ -18,27 +18,11 @@ function Products() {
         .then((data) => dispatch({ type: GET_PRODUCTS, payload: data }))
     }, []);
 
-    const items = [
-        {
-          childKey: 0,
-          image: '/images/wireframe/image.png',
-          header: 'Header',
-          description: 'Description',
-          meta: 'Metadata',
-          extra: 'Extra',
-        },
-        {
-          childKey: 1,
-          image: '/images/wireframe/image.png',
-          header: 'Header',
-          description: 'Description',
-          meta: 'Metadata',
-          extra: 'Extra',
-        },
-      ]
-
     return <div className='products'>
-        { isLoading? <Spinner/> : <Item.Group items={items} /> }
+        { isLoading? <Spinner/> : 
+          products.map((element) => 
+          <Card key={element.id} name={element.product_name} price={element.price} image={element.image} />) 
+        }
     </div>
 }
 
