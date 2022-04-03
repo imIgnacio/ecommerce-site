@@ -1,9 +1,23 @@
 import React from 'react'
 import { getProducts } from '../../api/getProducts';
 import { Item } from 'semantic-ui-react'
+import { store } from '../../index';
+import { useDispatch, useSelector } from 'react-redux';
+import { GET_PRODUCTS, LOADING } from '../../types/types';
+import Spinner from '../spinner/Spinner';
 
+function Products() {
 
-function Products(props) {
+    const dispatch = useDispatch();
+    const isLoading = useSelector( (state) => state.isLoading);
+    const products = useSelector( (state) => state.products);
+
+    React.useEffect( () => {
+        dispatch({ type: LOADING })
+        getProducts()
+        .then((data) => dispatch({ type: GET_PRODUCTS, payload: data }))
+    }, []);
+
     const items = [
         {
           childKey: 0,
@@ -23,9 +37,9 @@ function Products(props) {
         },
       ]
 
-    return (
-    <Item.Group items={items} />
-    )
+    return <div className='products'>
+        { isLoading? <Spinner/> : <Item.Group items={items} /> }
+    </div>
 }
 
 export default Products
