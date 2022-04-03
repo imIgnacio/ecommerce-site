@@ -1,20 +1,30 @@
 import React from 'react'
 import { getProducts } from '../../api/getProducts';
+import { Item } from 'semantic-ui-react'
 
-function Products() {
-    var array;
 
-    React.useEffect(async () => {
-
-        //Getting products from API
-        array = await getProducts();
-        console.log(array);
-    },[]);
+function Products(props) {
+    const items = [
+        {
+          childKey: 0,
+          image: '/images/wireframe/image.png',
+          header: 'Header',
+          description: 'Description',
+          meta: 'Metadata',
+          extra: 'Extra',
+        },
+        {
+          childKey: 1,
+          image: '/images/wireframe/image.png',
+          header: 'Header',
+          description: 'Description',
+          meta: 'Metadata',
+          extra: 'Extra',
+        },
+      ]
 
     return (
-    <div>
-        <h2>Products</h2>
-    </div>
+    <Item.Group items={items} />
     )
 }
 
