@@ -21,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/imIgnacio/momentos-prework/issues"
   },
-  "homepage": "https://github.com/imIgnacio/momentos-prework#readme",
   "devDependencies": {
     "concurrently": "^7.1.0"
   }
