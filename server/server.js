@@ -12,11 +12,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
-// All other GET requests not handled before will return our React app
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
-
 // sync sequelize models to the database, then turn on the server
 sequelize.sync({ force: false})
 .then(() => {
