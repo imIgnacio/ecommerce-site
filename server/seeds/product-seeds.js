@@ -6,7 +6,7 @@ const productData = [
     price: 14.99,
     stock: 14,
     category_id: 1,
-    image: 'http://code.slicecrowd.com/labs/4/images/t-shirt.png',
+    image: 'familiaPetLogo.JPG',
   },
   {
     product_name: 'Running Sneakers',

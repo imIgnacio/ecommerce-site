@@ -8,7 +8,8 @@ function Card(props) {
             <div className="row">
                 <div className="el-wrapper">
                     <div className="box-up">
-                        <img className="img" src={props.image} alt=""/>
+                        {console.log(props.image)}
+                        <img className="img" src={`assets/images/${props.image}`} alt=""/>
                         <div className="img-info">
                             <div className="info-inner">
                             <span className="p-name">{props.name}</span>

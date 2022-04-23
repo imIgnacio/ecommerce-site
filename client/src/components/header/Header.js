@@ -4,7 +4,7 @@ import './Header.css';
 function Header() {
   return (
     <header>
-        <h1>My Little Store💰</h1>
+        <img src={`assets/images/familiaPetLogo.JPG`} alt='Logo' className='logo-image'/>
         <ul className="menu1">
             <li>Home🏠</li>
             <li>About❓</li>
