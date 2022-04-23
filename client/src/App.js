@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <Header/>
       <div className='products'>
+        <h1><span className='colored'>HAVE A LOOK AT</span> OUR PRODUCTS</h1>
         <Products/>
       </div>
     </div>

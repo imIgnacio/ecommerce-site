@@ -1,6 +1,6 @@
 header {
     background-color: whitesmoke;
-    height: 260px;
+    height:140px;
     width: 100%;
     z-index: 10;
     display: flex;
@@ -11,8 +11,9 @@ header {
 }
 
 .logo-image {
-  height: 160px;
-  width: 160px;
+  padding-top: 20px;
+  height: 80px;
+  width: 80px;
 }
 
 .menu1 {
